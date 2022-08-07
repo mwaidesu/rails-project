@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+
+import React from 'react'
+import { Route, Routes } from 'react-router';
+import PostForm from './components/PostForm';
+// import Posts from './components/Posts';
+// import Navbar from './components/Navbar';
+import Parent from './components/Parent';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <Parent/> */}
+      {/* <Navbar/> */}
+      <Routes>
+        <Route path = "/"  element={<Parent/>}>
+        </Route>
+
+        <Route path = "/new"  element={<PostForm/>}>
+        </Route>
+
+      </Routes>
+
+      
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
