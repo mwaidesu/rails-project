@@ -14,8 +14,8 @@ function PostCard({ post }) {
   }
   return (
     // <div className=" card mx-4 text-start my-4 p-4 ">
-    <div className="container-fluid">
-      <div className="row">
+    <div className="container-fluid mx-5">
+      <div className="row mx-5">
         <div className="shadow p-4 m-5 bg-white rounded w-50 col align-self-center text-start">
           <div>
             <img

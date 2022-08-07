@@ -1,5 +1,6 @@
 import { useState} from "react"
 import { useNavigate } from "react-router";
+import Navbar from "./Navbar";
 
 
 function PostForm() {
@@ -49,6 +50,8 @@ function PostForm() {
 
   return (
     <>
+
+    <Navbar/>
     
       <form onSubmit={handleSubmit} className="my-5 text-center">
       <h1 className = "text-center">Write An Article</h1>
