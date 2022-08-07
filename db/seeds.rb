@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+posts = Post.create([
+    {title: "JavaScript v Ruby", image: "https://www.pexels.com/photo/close-up-photo-of-programming-of-codes-546819/", body:"Blog Post 1"},
+    {title: "JavaScript v Python", image: "https://www.pexels.com/photo/close-up-photo-of-programming-of-codes-546819/", body:"Blog Post 2 "},
+    {title: "Python v Ruby", image: "https://www.pexels.com/photo/close-up-photo-of-programming-of-codes-546819/", body:"Blog Post 3"},])
