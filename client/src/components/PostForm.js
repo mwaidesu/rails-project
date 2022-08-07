@@ -1,6 +1,4 @@
 import { useState} from "react"
-import { useNavigate } from "react-router";
-import Navbar from "./Navbar";
 
 
 function PostForm() {
@@ -11,14 +9,6 @@ function PostForm() {
     body: "",
   });
 
-//   const [blog, setBlog] = useState([]);
-//   function addPost(e) {
-//     const post = e.target.value;
-//     console.log(post);
-//     setBlog([...blog, post]);
-//   }
-
-  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -36,7 +26,7 @@ function PostForm() {
       }
     });
 
-    navigate('/')
+    setFormData("");
   }
   
 
@@ -51,7 +41,7 @@ function PostForm() {
   return (
     <>
 
-    <Navbar/>
+    {/* <Navbar/> */}
     
       <form onSubmit={handleSubmit} className="my-5 text-center">
       <h1 className = "text-center">Write An Article</h1>

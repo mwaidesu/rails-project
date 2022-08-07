@@ -27,6 +27,6 @@ posts = Post.create(
         title: "Quick Start Overview",
         image: "https://repository-images.githubusercontent.com/126577260/3c924980-61ac-11e9-8e4e-6e50e0cec366",
         body: "If you're familiar with the JavaScript ecosystem, React, and React Router, this serves as a quick overview of React Router v6 with lots of code and minimal explanations.\n\nFor a complete introduction to React Router, do the Tutorial\nFor a deeper understanding of concepts, see Main Concepts"
-        }
+        },
         ]
 )

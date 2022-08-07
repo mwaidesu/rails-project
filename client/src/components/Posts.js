@@ -12,17 +12,15 @@ function Posts() {
       });
   }, []);
 
-
-//   const displayedposts = posts.filter(
-//     (post) => selectedCategory === "All" || post.category === selectedCategory
-//   );
-
   return (
     <>
       <section>
+        <h2>Blog Posts</h2>
         {posts.map((post) => (
           <PostCard key={post.id} post={post} />
         ))}
+
+        
       </section>
     </>
   );

@@ -4,6 +4,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+body{
+  width: 100vw;
+}
+
 .card-image{
   width: 20%;
 }

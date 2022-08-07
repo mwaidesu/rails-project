@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import Navbar from "./Navbar";
 
 function SignUp({ setUser }) {
   const [username, setUsername] = useState("");
@@ -26,33 +27,44 @@ function SignUp({ setUser }) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="text-center my-5">
         <h1>Sign Up</h1>
-        <label htmlFor="username">Username</label>
+        <div>
         <input
+        className="form-control btn text-start my-4 w-50  border border-danger py-3"
           type="text"
+          placeholder="Username"
           id="username"
           autoComplete="off"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <label htmlFor="password">Password</label>
+        </div>
+       
+        <div>
         <input
+        className="form-control btn text-start my-4 w-50  border border-danger py-3"
           type="password"
+          placeholder="Password"
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           autoComplete="current-password"
         />
-        <label htmlFor="password">Password Confirmation</label>
+        </div>
+    
+        <div>
         <input
+        className="form-control btn text-start my-4 w-50  border border-danger py-3"
           type="password"
+          placeholder="Confirm Password"
           id="password_confirmation"
           value={passwordConfirmation}
           onChange={(e) => setPasswordConfirmation(e.target.value)}
           autoComplete="current-password"
         />
-        <button type="submit">Sign Up</button>
+        </div>
+        <button className="form-control btn  btn-danger text-start my-4 w-50 py-3" type="submit">Sign Up</button>
       </form>
     </div>
   );

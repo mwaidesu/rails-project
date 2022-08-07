@@ -21,25 +21,33 @@ function Login({ setUser }) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="my-5 text-center">
         <h1>Login</h1>
-        <label htmlFor="username">Username</label>
-        <input
+
+       <div>
+       <input
+        className="form-control btn text-start my-4 w-50  border border-danger py-3"
           type="text"
           id="username"
           autoComplete="off"
+          placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <label htmlFor="password">Password</label>
+       </div>
+
+        <div>
         <input
+        className="form-control btn text-start my-4 w-50  border border-danger py-3"
           type="password"
           id="password"
           autoComplete="current-password"
+          placeholder ="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Login</button>
+        </div>
+        <button  className="form-control btn btn-danger text-center my-4 w-50  py-3"type="submit">Login</button>
       </form>
     </div>
   );
