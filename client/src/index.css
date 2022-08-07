@@ -7,3 +7,17 @@
 .card-image{
   width: 20%;
 }
+
+.footer-links{
+  list-style-type: none;
+  
+}
+
+.footer-links li a{
+  text-decoration: none;
+  color: white;
+}
+
+.footer-links li a:hover{
+  color: blue;
+}

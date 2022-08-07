@@ -35,7 +35,14 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1
   def destroy
-    @post.destroy
+    # @post.destroy(params[:id])
+    post = Post.find_by(id: params[:id])
+    if post
+      post.destroy
+      head :no_content
+    else
+      render json: { error: "post not found" }, status: :not_found
+    end
   end
 
   private

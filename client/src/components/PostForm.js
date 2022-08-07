@@ -10,12 +10,12 @@ function PostForm() {
     body: "",
   });
 
-  const [blog, setBlog] = useState([]);
-  function addPost(e) {
-    const post = e.target.value;
-    console.log(post);
-    setBlog([...blog, post]);
-  }
+//   const [blog, setBlog] = useState([]);
+//   function addPost(e) {
+//     const post = e.target.value;
+//     console.log(post);
+//     setBlog([...blog, post]);
+//   }
 
   const navigate = useNavigate();
 
@@ -37,6 +37,7 @@ function PostForm() {
 
     navigate('/')
   }
+  
 
   function handleChange(e) {
     const value = e.target.value;
@@ -82,7 +83,7 @@ function PostForm() {
           />
         </div>
 
-        <button className="form-control btn btn-danger my-4 w-50 py-3" type="submit"  onClick={addPost}>New Post</button>
+        <button className="form-control btn btn-danger my-4 w-50 py-3" type="submit" >New Post</button>
         {errors.length > 0 && (
           <ul style={{ color: "red" }}>
             {errors.map((error) => (
