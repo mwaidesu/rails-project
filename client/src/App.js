@@ -20,7 +20,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className="App">
     <Navbar user={user} setUser={setUser} />
     <main>
       {user ? (
@@ -43,7 +43,7 @@ function App() {
         </Switch>
       )}
     </main>
-  </>
+  </div>
   );
 }
 
