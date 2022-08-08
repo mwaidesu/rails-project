@@ -1,10 +1,30 @@
+// import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from ".//Footer";
 
 import PostForm from "./PostForm";
 import Posts from "./Posts";
 
-function Parent({ user }) {
+function Parent({ user, 
+  // onUpdatePost
+}) {
+
+  // const [posts, setPosts] = useState([]);
+
+  // useEffect(() => {
+  //   fetch("/posts")
+  //     .then((r) => r.json())
+  //     .then(setPosts);
+  // }, []);
+
+  // function handleUpdatePost(updatedPost) {
+  //   const updatedPosts = posts.map((post) =>
+  //     post.id === updatedPost.id ? updatedPost : post
+  //   );
+  //   setPosts(updatedPosts);
+  // }
+
+
   if (user) {
     return (
       <div className="text-center">
@@ -12,7 +32,11 @@ function Parent({ user }) {
           Welcome, {user.username}!
         </h1>
         <PostForm />
-        <Posts />
+        <Posts 
+        
+        // onUpdatePost = {handleUpdatePost} 
+        
+        />
         <Footer />
       </div>
     );

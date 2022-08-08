@@ -42,3 +42,7 @@ body{
  border-radius: 2rem;
  padding: 10px;
 }
+
+.text-dark{
+  text-decoration: none!important;
+}

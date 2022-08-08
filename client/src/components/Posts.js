@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import PostCard from "./PostCard";
 
-function Posts() {
+function Posts(
+//   {
+//   onUpdatePost
+// }
+) {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -17,7 +21,9 @@ function Posts() {
       <section>
         <h2>Blog Posts</h2>
         {posts.map((post) => (
-          <PostCard key={post.id} post={post} />
+          <PostCard key={post.id} post={post}
+          //  onUpdatePost={onUpdatePost}
+            />
         ))}
 
         

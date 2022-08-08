@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :update, :destroy]
+  before_action :set_post, only: [:show, :destroy]
+  wrap_parameters format: []
 
   # GET /posts
   def index
@@ -26,12 +27,26 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1
   def update
-    if @post.update(post_params)
-      render json: @post
+    post = Post.find_by(id: params[:id])
+    if post
+      post.update(post_params)
+      render json: post
     else
-      render json: @post.errors, status: :unprocessable_entity
+      render json: { error: "post not found" }, status: :not_found
+
     end
+
   end
+
+def increment_likes
+    post = Post.find_by(id: params[:id])
+    if post
+      post.update(likes: post.likes + 1)
+      render json: post
+    else
+      render json: { error: "post not found" }, status: :not_found
+    end
+end
 
   # DELETE /posts/1
   def destroy
@@ -53,6 +68,7 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :image, :body)
+      # params.require(:post).permit(:title, :image, :likes, :body, :id)
+      params.permit(:title, :image, :likes, :body, :id)
     end
 end

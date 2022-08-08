@@ -1,17 +1,18 @@
-import { useState} from "react"
-
+import { useState } from "react";
 
 function PostForm() {
-  const [errors, setErrors] = useState([]);
+  // const [errors, setErrors] = useState([]);
   const [formData, setFormData] = useState({
     title: "",
     image: "",
     body: "",
+    likes: 0,
   });
 
-
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit(
+    // e
+    ) {
+    // e.preventDefault();
     fetch("/posts", {
       method: "POST",
       headers: {
@@ -21,14 +22,24 @@ function PostForm() {
     }).then((response) => {
       if (response.ok) {
         response.json().then((newPost) => console.log(newPost));
-      } else {
-        response.json().then((errorData) => setErrors(errorData.errors));
       }
+      // else {
+      //   response.json().then((errorData) => setErrors(errorData.errors));
+      // }
     });
 
     setFormData("");
   }
-  
+
+  function refresh() {
+    window.location.reload();
+  }
+
+  function twoFn() {
+    handleSubmit();
+
+    refresh();
+  }
 
   function handleChange(e) {
     const value = e.target.value;
@@ -40,14 +51,13 @@ function PostForm() {
 
   return (
     <>
+      {/* <Navbar/> */}
 
-    {/* <Navbar/> */}
-    
-      <form onSubmit={handleSubmit} className="my-5 text-center">
-      <h1 className = "text-center">Write An Article</h1>
+      <form onSubmit={twoFn} className="my-5 text-center">
+        <h1 className="text-center">Write An Article</h1>
         <div>
           <input
-          className="form-control btn text-start my-4 w-50  border border-danger py-3"
+            className="form-control btn text-start my-4 w-50  border border-danger py-3"
             type="text"
             id="title"
             value={formData.title}
@@ -58,7 +68,7 @@ function PostForm() {
 
         <div>
           <textarea
-          className="form-control btn text-start my-4 w-50  border border-danger py-3"
+            className="form-control btn text-start my-4 w-50  border border-danger py-3"
             id="body"
             value={formData.body}
             onChange={handleChange}
@@ -67,7 +77,7 @@ function PostForm() {
         </div>
         <div>
           <input
-          className="form-control btn text-start my-4 w-50  border border-danger py-3"
+            className="form-control btn text-start my-4 w-50  border border-danger py-3"
             type="text"
             id="image"
             value={formData.image}
@@ -76,19 +86,26 @@ function PostForm() {
           />
         </div>
 
-        <button className="form-control btn btn-danger my-4 w-50 py-3" type="submit" >New Post</button>
-        {errors.length > 0 && (
-          <ul style={{ color: "red" }}>
-            {errors.map((error) => (
-              <li key={error}>{error}</li>
-            ))}
-          </ul>
-        )}
+        {/* <div>
+          <input
+          className="form-control btn text-start my-4 w-50 d-none  border border-danger py-3 d"
+            type="number"
+            id="likes"
+            value={parseInt(0)}
+            onChange={handleChange}
+            placeholder="0 likes"
+          />
+        </div> */}
+
+        <button
+          className="form-control btn btn-danger my-4 w-50 py-3"
+          type="submit"
+        >
+          New Post
+        </button>
       </form>
     </>
   );
 }
-
-
 
 export default PostForm;
